@@ -11,9 +11,9 @@ const rootConfig = {
 
 const appConfig = {
   ...rootConfig,
-  entry: './src/main.js',
+  entry: './src/App.vue',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/'),
     filename: 'bundle.js',
   },
   module: {
@@ -29,18 +29,19 @@ const appConfig = {
     ],
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.runtime.esm.js',
     },
-    extensions: ['*', '.js', '.vue', '.json'],
   },
   plugins: [
     new VueLoaderPlugin(),
+    // Other plugins...
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     watchContentBase: true,
-  },
+  }
 };
 
 module.exports = appConfig;
