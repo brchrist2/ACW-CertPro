@@ -11,9 +11,9 @@ const rootConfig = {
 
 const appConfig = {
   ...rootConfig,
-  entry: './src/App.vue',
+  entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -39,8 +39,9 @@ const appConfig = {
     // Other plugins...
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    watchContentBase: true,
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    historyApiFallback: true,
   }
 };
 
