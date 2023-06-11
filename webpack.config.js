@@ -1,13 +1,13 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+const rootConfig = {
+  mode: 'development'
+};
+
 const appConfig = {
-  mode: 'development',
+  ...rootConfig,
   entry: './src/main.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
   module: {
     rules: [
       {
@@ -20,24 +20,14 @@ const appConfig = {
       },
     ],
   },
-  resolve: {
-    extensions: ['.js', '.vue'],
-    alias: {
-      vue$: 'vue/dist/vue.runtime.esm.js',
-    },
+  output: {
+    path: path.resolve(__dirname, 'public/dist'),
+    filename: 'bundle.js',
   },
   plugins: [
     new VueLoaderPlugin(),
     // Other plugins...
-  ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-      publicPath: '/',
-    },
-    historyApiFallback: true,
-    hot: true
-  }
+  ]
 };
 
 module.exports = appConfig;
