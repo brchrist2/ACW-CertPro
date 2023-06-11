@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      // other compiler options...
+      "vueCompilerOptions": {
+        "target": "2.7"
+      }
+    },
+    "include": ["src/**/*.js", "src/**/*.vue"]
+  }

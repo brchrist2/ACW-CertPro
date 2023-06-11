@@ -31,9 +31,12 @@ const appConfig = {
     // Other plugins...
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      publicPath: '/',
+    },
     historyApiFallback: true,
+    hot: true
   }
 };
 
