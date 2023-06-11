@@ -1,16 +1,8 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const rootConfig = {
-  mode: 'development',
-  optimization: {
-    usedExports: true, // tells webpack to tree-shake
-  },
-  devtool: 'eval-source-map',
-};
-
 const appConfig = {
-  ...rootConfig,
+  mode: 'development',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

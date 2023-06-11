@@ -4,8 +4,8 @@
   "description": "ACW Certificate Web App",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack --watch --progress",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --hot",
     "visualize-bundle": "webpack --analyze"
   },
   "author": "Bret C.",
