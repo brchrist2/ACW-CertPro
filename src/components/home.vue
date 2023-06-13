@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Home Page</h2>
-    <p>Welcome to the home page of the Sample App!</p>
+    <p>Welcome to the home page of the Sample!</p>
   </div>
 </template>
 

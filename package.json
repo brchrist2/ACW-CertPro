@@ -11,24 +11,27 @@
   "author": "Bret C.",
   "license": "ISC",
   "dependencies": {
-    "tailwindcss": "^2.2.19",
-    "vue-router": "^3.5.2"
+    "@headlessui/vue": "^1.7.14",
+    "@heroicons/vue": "^2.0.18",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
-    "autoprefixer": "^10.3.1",
-    "babel-loader": "^8.2.2",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.2.0",
-    "postcss": "^8.3.5",
-    "postcss-loader": "^6.1.1",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^8.4.2",
     "style-loader": "^3.3.0",
-    "vue": "^2.7.14",
-    "vue-loader": "^15.10.1",
+    "tailwindcss": "^3.3.2",
+    "vue": "^3.3.4",
+    "vue-loader": "^17.2.2",
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.51.1",
     "webpack-bundle-analyzer": "^4.9.0",
-    "webpack-cli": "^4.8.0",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   }
 }

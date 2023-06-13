@@ -1,13 +1,19 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 const rootConfig = {
-  mode: 'development'
+  mode: 'development',
 };
 
 const appConfig = {
   ...rootConfig,
-  entry: './src/main.js',
+  entry: {
+    bundle: './src/main.js',
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'public/dist'),
+  },
   module: {
     rules: [
       {
@@ -15,19 +21,20 @@ const appConfig = {
         loader: 'vue-loader',
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ]
+      }
     ],
-  },
-  output: {
-    path: path.resolve(__dirname, 'public/dist'),
-    filename: 'bundle.js',
   },
   plugins: [
     new VueLoaderPlugin(),
     // Other plugins...
-  ]
+  ],
 };
 
 module.exports = appConfig;
