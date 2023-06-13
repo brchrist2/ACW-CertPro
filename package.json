@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --hot",
+    "start": "webpack serve --mode development",
     "visualize-bundle": "webpack --analyze"
   },
   "author": "Bret C.",

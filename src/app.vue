@@ -62,24 +62,37 @@
   <router-view></router-view>
 </template>
 
-<script setup>
+<script>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
-const navigation = [
-  { name: 'Home', to: '/', current: false },
-  { name: 'About', to: '/About', current: false }
-];
-</script>
-
-<script>
 export default {
   name: 'App',
+  components: {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    Bars3Icon,
+    BellIcon,
+    XMarkIcon
+  },
+  setup() {
+    const route = useRoute();
+
+    const navigation = computed(() => [
+      { name: 'Home', to: '/', current: route.path === '/' },
+      { name: 'About', to: '/About', current: route.path === '/About' }
+    ]);
+
+    return {
+      navigation
+    };
+  }
 };
 </script>
-
-<style scoped>
-h1 {
-  color: #333;
-}
-</style>
