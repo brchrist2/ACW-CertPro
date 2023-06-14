@@ -1,6 +1,6 @@
 <template>
-  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <Disclosure as="nav" class="bg-gray-800 mb-10" v-slot="{ open }">
+    <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
@@ -62,7 +62,7 @@
   <router-view></router-view>
 </template>
 
-<script>
+<script> 
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
@@ -87,7 +87,8 @@ export default {
 
     const navigation = computed(() => [
       { name: 'Home', to: '/', current: route.path === '/' },
-      { name: 'About', to: '/About', current: route.path === '/About' }
+      { name: 'Client List', to: '/ClientList', current: route.path === '/ClientList' },
+      { name: 'Clients', to: '/Clients', current: route.path === '/Clients' }
     ]);
 
     return {
