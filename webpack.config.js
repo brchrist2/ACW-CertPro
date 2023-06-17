@@ -40,7 +40,17 @@ const appConfig = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
-  }
+  },
+  devServer: {
+    historyApiFallback: true,
+    client: {
+      overlay: true,
+    },
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+  },
 };
 
 module.exports = appConfig;

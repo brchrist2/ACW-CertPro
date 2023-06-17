@@ -4,6 +4,7 @@ import App from './App.vue';
 import Pdf from './components/Pdf.vue';
 import Home from './components/Home.vue';
 import Clients from './components/Clients.vue';
+import Sample from './components/Sample.vue';
 import './styles.css';
 
 const router = createRouter({
@@ -12,11 +13,8 @@ const router = createRouter({
     { path: '/', component: Home },
     { path: '/Pdf', component: Pdf },
     { path: '/Clients', component: Clients },
+    { path: '/Sample', component: Sample }
   ],
 });
 
-const app = createApp(App);
-
-app.use(router);
-
-app.mount('#app');
+createApp(App).use(router).mount('#app');

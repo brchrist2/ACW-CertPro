@@ -6,6 +6,20 @@
     font-family: Proxima Nova, system-ui, sans-serif;
   }
 }
+@layer components {
+  .inputer  {
+    @apply placeholder-gray-300 mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black;
+  }
+  .cloudsplitter {
+    @apply text-center text-xs font-normal col-span-2 mb-4
+  }
+  .cloudsplitter > div {
+    @apply relative w-full
+  }
+  .input-box {
+    @apply px-4 py-2 border rounded-md bg-gray-100 text-gray-700 focus: outline-none focus:border-blue-400;
+  }
+}
 body {
   background-color: #f8f8f8;
   margin: 0;

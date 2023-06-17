@@ -3,7 +3,7 @@
     <div class="flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 m-5 ring-gray-900/5 sm:p-6">
       <div>
           <div class="mt-2">
-            <input v-model="search" placeholder="Search clients" name="search" type="text" required="" class="placeholder-gray-300 mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" />
+            <input v-model="search" placeholder="Search clients" name="search" type="text" required="" class="inputer" />
           </div>
       </div>
       <ul role="list" class="divide-y divide-gray-100">
