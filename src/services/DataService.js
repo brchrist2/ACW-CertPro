@@ -1,32 +1,36 @@
-import { initializeApp } from 'firebase/app';
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    query,
-    where,
-    getDoc,
-    orderBy,
-    limit,
-    onSnapshot,
-    setDoc,
-    updateDoc,
-    doc,
-    serverTimestamp,
-    Firestore,
-  } from 'firebase/firestore';
-import { getFirebaseConfig } from '../firebase-config.js';
+import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
+import { getFirebaseConfig } from "./firebaseConfig.js";
 
-const firebaseAppConfig = getFirebaseConfig();
-const firebaser = initializeApp(firebaseAppConfig);
-const db = getFirestore(firebaser);
-//const queryEr = query(collection(db, "insureds"), orderBy('name', 'asc'));
+const firebaser = getFirebaseConfig();
 
-class TutorialDataService {
-    getAll() {
-        const docRef = doc(db, "insureds", "cwwyDDZaFzmeymHFlc3l");
-        return docRef;
+class certQuery {
+  async specific(certid) {
+    const db = getFirestore(firebaser);
+    const docRef = doc(
+      db,
+      "insureds/RYnifxrLtfkIu2i0SMvf/cert-holders",
+      certid
+    );
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return {
+        id: docSnap.id,
+        ...docSnap.data(),
+      };
+    } else {
+      return null;
     }
   }
-  
-export default new TutorialDataService();
+
+  async updateEntry(certid, updatedData) {
+    const db = getFirestore(firebaser);
+    const docRef = doc(
+      db,
+      "insureds/RYnifxrLtfkIu2i0SMvf/cert-holders",
+      certid
+    );
+    await updateDoc(docRef, updatedData);
+  }
+}
+
+export default new certQuery();

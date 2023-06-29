@@ -6,6 +6,7 @@ import Home from './components/Home.vue';
 import Clients from './components/Clients.vue';
 import Sample from './components/Sample.vue';
 import './styles.css';
+import ResizeTextarea from 'resize-textarea-vue3';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,4 +18,4 @@ const router = createRouter({
   ],
 });
 
-createApp(App).use(router).mount('#app');
+createApp(App).use(router).use(ResizeTextarea).mount('#app');
